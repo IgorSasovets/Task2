@@ -14,8 +14,8 @@
 		 }
 		 
 		 hit(enemy, point) {
-		     let damage = this.power * point;
-             enemy.setDamage(damage);			 
+		     	 let damage = this.power * point;
+			 enemy.setDamage(damage);			 
 		 }
 		 
 		 getInfo() { 
@@ -48,10 +48,10 @@
 		 
 	     do {
 		     if (round_number % 2 > 0)
-				 fighter.hit(improved_fighter, point[0]);	
-             else 
-                 improved_fighter.doubleHit(fighter, point[1]);	
-             round_number++;				 
+		         fighter.hit(improved_fighter, point[0]);	
+             	     else 
+                         improved_fighter.doubleHit(fighter, point[1]);	
+             	     round_number++;				 
 		 } while (fighter.health > 0 && improved_fighter.health > 0);
 		 
 		 if (fighter.health > 0)
