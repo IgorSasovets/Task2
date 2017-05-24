@@ -17,3 +17,10 @@
 	let test = new Fighter("Ninja", 100, 20);
 	console.log(test.getInfo());
 }
+
+function OverFightButton()
+{
+     var box = document.getElementById("start_button");
+	 box.style.boxShadow = "0px 2px 3.0em #ffffff";
+	 box.style.cursor = "pointer";
+}

@@ -1,3 +1,32 @@
 body {
      background-image: url("fight_club.jpg");
 }
+
+#start_fight {
+     float: left;
+     width: 30%;
+	 height: 80%;
+	 background-color: #5791ed;
+     margin-left: 40%;
+     margin-top: 5%;
+     border-radius: 20px;
+     border-style: solid;
+     border-color: #911a28;
+	 text-align: center;
+     font-size: 15px;	
+	 font-style: italic;
+	 font-family: "Verdana";
+	 color: #0f2d5e;
+}
+
+#start_button {
+     float: center;
+	 width: 40%;
+	 height: 10%;
+	 background-color: #99b6e5;
+	 text-align: center;
+     font-size: 40px;	
+	 font-style: italic;
+	 font-family: "Verdana";
+	 color: #0f2d5e;
+}

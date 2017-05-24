@@ -8,7 +8,22 @@
 	</head>
 	
 	<body>
-		
+		<div id="start_fight">
+		     <h1> Fight club </h1> 
+			 <form>
+			    <ul>
+					<li> First fighter: </li> <br>
+					<li> Name: <input type="text" id="first_fighter_name" maxlength="35"/> </li> <br>
+					<li> health: <input type="text" id="first_fighter_health" maxlength="10"/> </li> <br>
+					<li> power: <input type="text" id="first_fighter_power" maxlength="10"/> </li> <br> <br>
+					<li> Second fighter: </li> <br>
+					<li> Name: <input type="text" id="second_fighter_name" maxlength="35"/> </li> <br>
+					<li> health: <input type="text" id="second_fighter_health" maxlength="10"/> </li> <br>
+					<li> power: <input type="text" id="second_fighter_power" maxlength="10"/> </li> <br> 
+				</ul>
+			 </form>
+			 <center> <div id="start_button" onclick="alert('OK!');" onmouseover="OverFightButton()" onmouseout="style.boxShadow = '0px 0px 0em #ffffff';"> Fight! </div> </center>
+		</div>
 		<script src="Task2.js"> </script> 
 	</body>
 </html>
