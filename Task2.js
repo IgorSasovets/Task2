@@ -13,7 +13,10 @@
 			 display();
 		 }
 		 
-		 
+		 hit(enemy, point) {
+		     let damage = this.power * point;
+             enemy.setDamage(damage);			 
+		 }
 		 
 		 getInfo() { 
 			 return `Fighter:
@@ -24,22 +27,38 @@
 	}
 	
 	class ImprovedFighter extends Fighter
-	{
+	{		 
+		 setDamage(damage) {
+		     super.setDamage(damage);
+		 }
+		 
+		 doubleHit(enemy, point) {
+		     point = point * 2;
+			 super.hit(enemy, point);
+		 }
+		 
 		 getInfo() { 
 			 return super.getInfo();
 		 }
-		 
-		 setDamage(damage) {
-		     () => super.setDamage(damage);
-		 }
 	}
 	
-	let test = new Fighter("Ninja", 100, 20);
-	let test2 = new ImprovedFighter();
-	
-	console.log(test.getInfo());
-	test.setDamage(20);
-	console.log(test.getInfo());
+	function fight(fighter, improved_fighter, ...point)
+	{
+	     let round_number = 1;
+	     do {
+		     if (round_number % 2 > 0)
+				 fighter.hit(improved_fighter, point[0]);	
+             else 
+                 improved_fighter.doubleHit(fighter, point[1]);	
+
+             round_number++;				 
+		 } while (fighter.health > 0 && improved_fighter.health > 0);
+		 
+		 if (fighter.health > 0)
+			 alert(`Fighter ${fighter.name} won!`);
+		 else
+		     alert(`Improved fighter ${improved_fighter.name} won!`);
+	}
 	
 	function Start()
 	{
@@ -57,8 +76,13 @@
 			 
 			 if (checking_result)
 			 {
-                 GetData(names, fighters_power, fighters_health);	
-                 ClearTextFields();				 
+                 GetData(names, fighters_power, fighters_health);
+				 let fighter = new Fighter(names[0], fighters_health[0], fighters_power[0]);
+	             let improved_fighter = new ImprovedFighter(names[1], fighters_health[1], fighters_power[1]);
+				 fight(fighter, improved_fighter, 10, 10);
+                 
+				 if (confirm(`Clear text fields?`))
+					 ClearTextFields();				 
 			 }
 			 
 			 else
