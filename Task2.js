@@ -1,20 +1,44 @@
 {
 	class Fighter
 	{
-	     constructor (name="fighter", health="100", power="25") {
+	     constructor (name="fighter", health=100, power=25) {
 		     this.name = name;
 			 this.health = health;
 			 this.power = power;
 		 }
 		 
+		 setDamage(damage) {
+			 this.health = this.health - damage;  
+			 let display = () => console.log(`health: ${this.health}`);
+			 display();
+		 }
+		 
+		 
+		 
 		 getInfo() { 
-			 return `fighter name: ${this.name}
-			         health: ${this.health}
-					 power: ${this.power}`;
+			 return `Fighter:
+ 			         - name: ${this.name}
+			         - health: ${this.health}
+					 - power: ${this.power}`;
+		 }
+	}
+	
+	class ImprovedFighter extends Fighter
+	{
+		 getInfo() { 
+			 return super.getInfo();
+		 }
+		 
+		 setDamage(damage) {
+		     () => super.setDamage(damage);
 		 }
 	}
 	
 	let test = new Fighter("Ninja", 100, 20);
+	let test2 = new ImprovedFighter();
+	
+	console.log(test.getInfo());
+	test.setDamage(20);
 	console.log(test.getInfo());
 	
 	function Start()
